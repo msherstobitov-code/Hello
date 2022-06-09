@@ -7,3 +7,4 @@ def thesaurus(*args):
         dict[key].append(name)
     return dict
 print(thesaurus('Иван', 'Мария', 'Петр', 'Илья', 'Мойша', 'Павел', 'Анна', 'Акакий'))
+
