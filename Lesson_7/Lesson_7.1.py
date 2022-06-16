@@ -1,5 +1,5 @@
 import os
-folder_struct = {
+folder_structure = {
     "my_project": [
         {
             "settings": [{"bar": [], "foo":[]}],
@@ -8,16 +8,12 @@ folder_struct = {
             "authapp": []
         }]
 }
-def project_starter(pth, struct):
-
-    for fold_node, ch_node in struct.items():
-        test_path = os.path.join(pth, fold_node)
+def starter(pth, structure):
+    for folder_name, ch_node in structure.items():
+        test_path = os.path.join(pth, folder_name)
         if not os.path.exists(test_path):
             os.mkdir(test_path)
-
         if len(ch_node) > 0:
             for node in ch_node:
-                project_starter(test_path, node)
-
-if __name__ == "__main__":
-    project_starter(os.getcwd(), struct=folder_struct)
+                starter(test_path, node)
+starter(os.getcwd(), structure=folder_structure)
